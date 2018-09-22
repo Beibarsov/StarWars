@@ -68,7 +68,7 @@ namespace StarWars
             {
                 game_object.Draw();
             }
-
+            //После закрытия игрового окна тут возникает исключение ArgumentException
             Buffer.Render();
         }
 
