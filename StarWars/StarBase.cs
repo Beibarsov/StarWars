@@ -12,7 +12,7 @@ namespace StarWars
         private int _DeltaY;
         
 
-        public StarBase(Point Position, Point Speed, Size Size) : base(Position, Speed, Size)
+        public StarBase(Point Position, Point Speed, Size Size, bool isEnemy) : base(Position, Speed, Size, isEnemy)
         {
         }
 
@@ -20,7 +20,7 @@ namespace StarWars
         {
             var g = Game.Buffer.Graphics;
             Image image = Image.FromFile(@"Images\starbase-tex.png");
-            g.DrawImage(image, _Position);
+            g.DrawImage(image, new Rectangle(_Position, _Size));
         }
         public override void Update()
         {
