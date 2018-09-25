@@ -15,6 +15,8 @@ namespace StarWars
         public Form1()
         {
             InitializeComponent();
+
+            //int.Parse
         }
     }
 }

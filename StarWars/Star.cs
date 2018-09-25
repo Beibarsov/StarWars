@@ -6,20 +6,19 @@ namespace StarWars
 {
     class Star : GameObject
     {
-        public Star(Point Position, Point Speed, Size Size)
-            : base(Position, Speed, Size) { }
+
+        Image image = Image.FromFile(@"Images\Star.png");
+
+        public Star(Point Position, Point Speed, Size Size, bool isEnemy)
+            : base(Position, Speed, Size, isEnemy) { }
          
         public override void Draw()
         {
 
 
             var g = Game.Buffer.Graphics;
-            Image image = Image.FromFile(@"Images\Star.png");
-            g.DrawImage(image, _Position);
+            g.DrawImage(image, new Rectangle(_Position,_Size));
 
-            //var g = Game.Buffer.Graphics;
-            //g.DrawLine(Pens.White, _Position.X, _Position.Y, _Position.X + _Size.Width, _Position.Y + _Size.Height);
-            //g.DrawLine(Pens.White, _Position.X + _Size.Width, _Position.Y, _Position.X, _Position.Y + _Size.Height);
 
 
             // base.Draw();
